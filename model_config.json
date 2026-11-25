@@ -1,0 +1,122 @@
+{
+  "_note": "Per-model request parameters that turn thinking off (or to the lowest level), sent through an OpenAI-compatible chat/completions endpoint. extra_body is merged into the JSON body; top_level is passed as normal arguments. Model names must match your endpoint. Prices are official vendor list prices in CNY per million tokens, used only for the cost column.",
+  "Kimi-K3.1-Pro": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 13.0,
+      "output": 68.0
+    }
+  },
+  "Kimi-K3": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "top_level": {
+      "temperature": 0.6
+    },
+    "vision": true,
+    "overrides": {
+      "medxpertqa_mm": {
+        "extra_body": {},
+        "top_level": {
+          "temperature": 1.0,
+          "reasoning_effort": "low"
+        },
+        "max_tokens": 8192
+      }
+    },
+    "price_cny_per_mtok": {
+      "input": 20.0,
+      "output": 100.0
+    },
+    "note": "Thinking off requires temperature 0.6. Images are only read with thinking on, so MedXpertQA-MM uses reasoning_effort=low."
+  },
+  "GLM-5.3": {
+    "top_level": {
+      "reasoning_effort": "low"
+    },
+    "vision": false,
+    "max_tokens": 8192,
+    "price_cny_per_mtok": {
+      "input": 8.0,
+      "output": 28.0
+    },
+    "note": "Thinking cannot be disabled; reasoning_effort=low is the lowest setting. No image input."
+  },
+  "DeepSeek-V4.1-Flash-1017": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 2.0,
+      "output": 8.0
+    }
+  },
+  "Hy4": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 6.0,
+      "output": 18.0
+    }
+  },
+  "Hy4-Flash": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 0.5,
+      "output": 2.0
+    }
+  },
+  "Qwen4-Max": {
+    "extra_body": {
+      "enable_thinking": false
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 10.0,
+      "output": 30.0
+    }
+  },
+  "GLM-5.3-Flash": {
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 0.8,
+      "output": 2.8
+    }
+  },
+  "Claude-Opus-5.5": {
+    "top_level": {
+      "reasoning_effort": "low"
+    },
+    "vision": true,
+    "price_cny_per_mtok": {
+      "input": 28.8,
+      "output": 144.0
+    },
+    "note": "Calibration model. Thinking cannot be disabled; reasoning_effort=low, as in the Mercor post. Price: $4/$20 at 7.2 CNY/USD."
+  }
+}

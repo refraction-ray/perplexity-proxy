@@ -1,0 +1,5 @@
+data/*.jsonl
+!data/*_options.jsonl
+data/raw/
+runs/
+__pycache__/
